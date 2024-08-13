@@ -13,8 +13,6 @@ return {
 
     local keys = require 'config/keymap'
 
-    print(keys)
-
     config.keys = keys
 
     return config
