@@ -11,9 +11,7 @@ return {
 
     config.leader = { key = 'l', mods = helpers.platform_mod(), timeout_milliseconds = 2000 }
 
-    local keys = require 'config/keymap'
-
-    config.keys = keys
+    config.keys = require 'config/keymap'
 
     return config
   end,
