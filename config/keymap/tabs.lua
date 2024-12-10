@@ -1,47 +1,63 @@
 local wezterm = require 'wezterm'
+local helpers = require 'config.helpers'
 local act = wezterm.action
 
 return {
   -- CreateTab
   {
     key = 't',
-    mods = 'LEADER',
+    mods = helpers.platform_mod(),
     action = act.SpawnCommandInNewTab {
       domain = 'CurrentPaneDomain',
       cwd = '/Users/ori.oskars',
     },
   },
   {
-    key = 'T',
-    mods = 'LEADER',
+    key = 't',
+    mods = helpers.mods {
+      helpers.platform_mod(),
+      'SHIFT',
+    },
     action = act.SpawnTab 'CurrentPaneDomain',
   },
   -- CloseTab
   {
     key = 'w',
-    mods = 'LEADER',
+    mods = helpers.platform_mod(),
     action = act.CloseCurrentTab { confirm = true },
   },
   -- TraverseTabs
   {
     key = '{',
-    mods = 'CTRL|SHIFT',
+    mods = helpers.mods {
+      helpers.platform_mod(),
+      'SHIFT'
+    },
     action = act.ActivateTabRelative(-1),
   },
   {
     key = '}',
-    mods = 'CTRL|SHIFT',
+    mods = helpers.mods {
+      helpers.platform_mod(),
+      'SHIFT'
+    },
     action = act.ActivateTabRelative(1),
   },
   -- MoveTab
   {
     key = '<',
-    mods = 'CTRL|SHIFT',
+    mods = helpers.mods {
+      helpers.platform_mod(),
+      'SHIFT'
+    },
     action = act.MoveTabRelative(-1),
   },
   {
     key = '>',
-    mods = 'CTRL|SHIFT',
+    mods = helpers.mods {
+      helpers.platform_mod(),
+      'SHIFT'
+    },
     action = act.MoveTabRelative(1),
   },
 }

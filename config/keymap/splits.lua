@@ -6,24 +6,36 @@ return {
   -- Create Split
   {
     key = 's',
-    mods = 'LEADER',
+    mods = helpers.mods {
+      helpers.platform_mod(),
+      'SHIFT',
+    },
     action = act.SplitHorizontal { domain = 'CurrentPaneDomain' },
   },
   {
     key = 'v',
-    mods = 'LEADER',
+    mods = helpers.mods {
+      helpers.platform_mod(),
+      'SHIFT',
+    },
     action = act.SplitVertical { domain = 'CurrentPaneDomain' },
   },
   -- Close Split
   {
     key = 'c',
-    mods = 'LEADER',
+    mods = helpers.mods {
+      helpers.platform_mod(),
+      'SHIFT',
+    },
     action = act.CloseCurrentPane { confirm = true },
   },
   -- Swap Splits
   {
     key = '8',
-    mods = 'LEADER',
+    mods = helpers.mods {
+      helpers.platform_mod(),
+      'SHIFT',
+    },
     action = act.PaneSelect {
       mode = 'SwapWithActive',
     },
