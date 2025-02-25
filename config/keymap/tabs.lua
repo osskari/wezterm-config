@@ -1,5 +1,5 @@
 local wezterm = require 'wezterm'
-local helpers = require 'config.helpers'
+local helpers = require 'config/helpers'
 local act = wezterm.action
 
 return {
