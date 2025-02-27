@@ -12,6 +12,7 @@ return {
       bottom = 0,
     }
 
+    config.enable_tab_bar = false
     config.use_fancy_tab_bar = false
 
     local scheme = wezterm.get_builtin_color_schemes()[options.colorscheme]
